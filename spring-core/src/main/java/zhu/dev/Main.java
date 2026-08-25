@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     static void main() {
         AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext("zhu.dev");
+                new AnnotationConfigApplicationContext(TaskConfiguration.class);
         Task task = context.getBean(Task.class);
         Task task2 = (Task)context.getBean("main-task");
 

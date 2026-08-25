@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class TaskConfiguration {
-    @Bean
+    @Bean("main-task")
     public Task task(){
         return new Task();
     }
