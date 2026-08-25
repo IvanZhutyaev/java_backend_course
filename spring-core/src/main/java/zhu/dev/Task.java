@@ -2,7 +2,7 @@ package zhu.dev;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("main-task")
 public class Task {
     public Task() {
         this.name = "task";
