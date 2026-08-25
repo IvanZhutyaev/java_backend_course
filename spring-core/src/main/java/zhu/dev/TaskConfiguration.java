@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class TaskConfiguration {
+    @Primary
     @Bean("main-task")
     public Task task(){
         return new Task();
@@ -16,7 +18,7 @@ public class TaskConfiguration {
         return new Task();
     }
     @Bean
-    public TaskManager taskManager( @Qualifier("main-task") Task task){
+    public TaskManager taskManager( Task task){
         return new TaskManager(task);
     }
 }
