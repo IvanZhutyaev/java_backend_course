@@ -11,6 +11,8 @@ public class Main {
         System.out.println("task1==task2: "+(task1==task2));
         TaskManager taskManager = context.getBean(TaskManager.class);
         taskManager.printTask();
+        TaskManager taskManager2 = context.getBean(TaskManager.class);
+        taskManager2.printTask();
 
         TaskExecutor taskExecutor = context.getBean(TaskExecutor.class);
         taskExecutor.executeTask();
