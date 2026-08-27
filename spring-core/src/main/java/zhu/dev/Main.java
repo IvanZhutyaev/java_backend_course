@@ -9,13 +9,16 @@ public class Main {
         Task task1 = context.getBean(Task.class);
         Task task2 = context.getBean(Task.class);
         System.out.println("task1==task2: "+(task1==task2));
-        TaskManager taskManager = context.getBean(TaskManager.class);
-        taskManager.printTask();
-        TaskManager taskManager2 = context.getBean(TaskManager.class);
-        taskManager2.printTask();
+//        TaskManager taskManager = context.getBean(TaskManager.class);
+//        taskManager.printTask();
+//        TaskManager taskManager2 = context.getBean(TaskManager.class);
+//        taskManager2.printTask();
+//
+//        TaskExecutor taskExecutor = context.getBean(TaskExecutor.class);
+//        taskExecutor.executeTask();
 
-        TaskExecutor taskExecutor = context.getBean(TaskExecutor.class);
-        taskExecutor.executeTask();
+        var properties=context.getBean(TaskProperties.class);
+        System.out.println(properties);
         context.close();
 
     }

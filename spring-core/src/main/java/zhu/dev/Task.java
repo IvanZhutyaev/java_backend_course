@@ -3,17 +3,20 @@ package zhu.dev;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component("main-task")
-@Scope("prototype")
 public class Task {
-    public Task() {
-        this.name = "task"+ ThreadLocalRandom.current().nextInt();
-        this.duration = 60L;
+    public Task(
+            @Value("${task.name}") String name,
+            @Value("${task.duration}") Integer duration
+    ) {
+        this.name = name+ ThreadLocalRandom.current().nextInt();
+        this.duration = duration;
         System.out.println("call task constructor!");
     }
 
@@ -25,7 +28,7 @@ public class Task {
     public void preDestroy(){
         System.out.println("task pre destroy");
     }
-    public Long getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 
@@ -42,5 +45,5 @@ public class Task {
     }
 
     private final String name;
-    private final Long duration;
+    private final Integer duration;
 }
