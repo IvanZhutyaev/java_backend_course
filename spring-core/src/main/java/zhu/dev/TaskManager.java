@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-
 public class TaskManager {
     private final Task task;
 
@@ -17,20 +16,17 @@ public class TaskManager {
     }
 
     @PostConstruct
-    public void init(){
-        System.out.println("TaskManager init!!!");
-    }
+//    public void init(){
+//        System.out.println("TaskManager init!!!");
+//    }
     @PreDestroy
-    public void destroy(){
-        System.out.println("TaskManager destroy!!!");
-    }
-    public void printTask(){
-        if(task==null){
-            System.out.println("Not found task");
+//    public void destroy(){
+//        System.out.println("TaskManager destroy!!!");
+//    }
+    public Integer printTask(){
+        System.out.println("Current task: "+task.toString());
+//        throw new RuntimeException("Exeption in TaskManager");
+        return task.getDuration();
         }
-        else{
-            System.out.println("Current task: "+task.toString());
+    }
 
-        }
-    }
-}

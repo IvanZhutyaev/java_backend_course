@@ -17,17 +17,17 @@ public class Task {
     ) {
         this.name = name+ ThreadLocalRandom.current().nextInt();
         this.duration = duration;
-        System.out.println("call task constructor!");
+//        System.out.println("call task constructor!");
     }
 
     @PostConstruct
-    public void postConstruct(){
-        System.out.println("task post construct");
-    }
+//    public void postConstruct(){
+//        System.out.println("task post construct");
+//    }
     @PreDestroy
-    public void preDestroy(){
-        System.out.println("task pre destroy");
-    }
+//    public void preDestroy(){
+//        System.out.println("task pre destroy");
+//    }
     public Integer getDuration() {
         return duration;
     }
