@@ -7,7 +7,8 @@ public class Main {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext("zhu.dev");
         TaskManager taskManager = context.getBean(TaskManager.class);
-        taskManager.printTask();
+        var result = taskManager.printTask();
+        System.out.println("result="+result);
         context.close();
 
     }

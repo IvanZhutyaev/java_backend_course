@@ -32,9 +32,9 @@ public class LoggingAspect {
     @Around("execution(* zhu.dev.TaskManager.*(..))")
     public Object LogAround(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println("Before method");
-        Object result = joinPoint.proceed();
+        Integer result = (Integer)joinPoint.proceed();
         System.out.println("After method");
-        return result;
+        return result/2;
     }
 
 
