@@ -10,7 +10,7 @@ public class TaskExecutor {
     public TaskExecutor(Task task) {
         this.task = task;
     }
-    @Loggable("ERROR")
+    @Loggable(value = "ERROR", count = 3)
     public void executeTask() {
         System.out.printf("Execute task with name %s, total seconds %s%n", task.getName(), task.getDuration());
     }

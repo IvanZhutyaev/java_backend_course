@@ -38,7 +38,9 @@ public class LoggingAspect {
 //    }
         @Before("@annotation(loggable)")
         public void log(JoinPoint joinPoint, Loggable loggable) {
-            System.out.printf("LOG %s:BEFORE METHOD=%s\n",loggable.value(),joinPoint.getSignature().getName());
+                for (int i=0;i>loggable.count(); i++){
+                    System.out.printf("LOG %s:BEFORE METHOD=%s\n",loggable.value(),joinPoint.getSignature().getName());
+                }
         }
 
 }
